@@ -8,7 +8,7 @@ const connectDB = async () => {
             useUnifiedTopology: true,
         });
 
-        mongoose.set('strictQuery', true);
+        //mongoose.set('strictQuery', true);
 
         console.log("MongoDB connections SUCCESS");
     }   catch (error) {
