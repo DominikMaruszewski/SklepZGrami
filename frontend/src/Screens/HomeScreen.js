@@ -15,8 +15,9 @@ const HomeScreen = () => {
   const { products, loading, error } = getProducts;
 
   useEffect(() => {
-  dispatch(listProducts());
+    dispatch(listProducts());
   }, [dispatch]);
+
   return (
     <div className="homescreen">
       <h2 className="homescreen__title">Latest Products</h2>
