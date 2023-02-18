@@ -1,6 +1,6 @@
 .sidedrawer {
     width: 70%;
-    background: #fff;
+    background: linear-gradient(to left, #041E3D, #4C67F4);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -41,7 +41,7 @@
     flex: 1;
     padding: 1rem;
     text-decoration: none;
-    color: #171717;
+    color: #fff;
     font-size: 1.6rem;
   }
   
@@ -57,7 +57,7 @@
     justify-content: center;
     width: 30px;
     height: 30px;
-    background-color: #171717;
+    background-color: #4C67F4;
     border-radius: 50%;
     margin-left: 8px;
     color: #fff;

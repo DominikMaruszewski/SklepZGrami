@@ -11,10 +11,10 @@ const Product = ({ imageUrl, description, price, name, productId }) => {
 
         <p className="info__description">{description.substring(0, 100)}...</p>
 
-        <p className="info__price">${price}</p>
+        <p className="info__price">{price}zł</p>
 
         <Link to={`/product/${productId}`} className="info__button">
-          View
+          Zobacz wiecej
         </Link>
       </div>
     </div>

@@ -13,12 +13,6 @@ const ProductScreen = ({ match, history }) => {
   const productDetails = useSelector((state) => state.getProductDetails);
   const { loading, error, product } = productDetails;
 
-  useEffect(() => {
-    if (product && match.params.id !== product._id) {
-      dispatch(getProductDetails(match.params.id));
-    }
-  }, [dispatch, match, product]);
-
   /*
   useEffect(() => {
     if (product && match.params.id !== product._id) {
@@ -34,7 +28,7 @@ const ProductScreen = ({ match, history }) => {
   return (
     <div className="productscreen">
       {loading ? (
-        <h2>Loading...</h2>
+        <h2>Proszę czekać...</h2>
       ) : error ? (
         <h2>{error}</h2>
       ) : (
@@ -45,24 +39,24 @@ const ProductScreen = ({ match, history }) => {
             </div>
             <div className="left__info">
               <p className="left__name">{product.name}</p>
-              <p>Price: ${product.price}</p>
-              <p>Description: {product.description}</p>
+              <p>Cena: {product.price}zł</p>
+              <p>Opis: {product.description}</p>
             </div>
           </div>
           <div className="productscreen__right">
             <div className="right__info">
               <p>
-                Price:
-                <span>${product.price}</span>
+                Cena:
+                <span>{product.price}zł</span>
               </p>
               <p>
-                Status:
+                Ilość na stanie:
                 <span>
-                  {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                  {product.countInStock > 0 ? "Produktów" : "Aktualnie niedostępne"}
                 </span>
               </p>
               <p>
-                Qty
+                Ilość
                 <select value={qty} onChange={(e) => setQty(e.target.value)}>
                   {[...Array(product.countInStock).keys()].map((x) => (
                     <option key={x + 1} value={x + 1}>
@@ -73,7 +67,7 @@ const ProductScreen = ({ match, history }) => {
               </p>
               <p>
                 <button type="button" onClick={addToCartHandler}>
-                  Add To Cart
+                  Dodaj do koszyka
                 </button>
               </p>
             </div>
