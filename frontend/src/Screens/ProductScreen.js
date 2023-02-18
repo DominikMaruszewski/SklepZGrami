@@ -19,6 +19,13 @@ const ProductScreen = ({ match, history }) => {
     }
   }, [dispatch, match, product]);
 
+  /*
+  useEffect(() => {
+    if (product && match.params.id !== product._id) {
+      dispatch(getProductDetails(match.params.id));
+    }
+  }, [dispatch, match, product]);
+*/
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
     history.push(`/cart`);

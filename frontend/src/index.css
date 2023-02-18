@@ -6,7 +6,8 @@
   
   body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
+    background-image: linear-gradient(to top, #07124D, #4C67F4);
+    background-size: cover;
   }
   
   img {
